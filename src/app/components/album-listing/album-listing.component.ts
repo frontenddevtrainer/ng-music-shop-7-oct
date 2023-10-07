@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Album } from 'src/app/interfaces/Album';
 
 @Component({
   selector: 'ms-album-listing',
@@ -8,5 +9,6 @@ import { Component, Input } from '@angular/core';
 export class AlbumListingComponent {
 
   @Input() heading: string = "";
+  @Input() albums: Album[] = [];
 
 }

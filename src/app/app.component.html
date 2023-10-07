@@ -1,7 +1,7 @@
 <ms-main-header></ms-main-header>
 <main class="container mx-auto p-8">
     <ms-main-banner></ms-main-banner>
-    <ms-album-listing [heading]="topAlbumHeading"></ms-album-listing>
-    <ms-album-listing [heading]="latestAlbumHeading"></ms-album-listing>
-    <ms-album-listing [heading]="bollywoodAlbumHeading"></ms-album-listing>
+    <ms-album-listing [albums]="topAlbums" [heading]="topAlbumHeading"></ms-album-listing>
+    <ms-album-listing [albums]="topAlbums" [heading]="latestAlbumHeading"></ms-album-listing>
+    <ms-album-listing [albums]="topAlbums" [heading]="bollywoodAlbumHeading"></ms-album-listing>
 </main>
