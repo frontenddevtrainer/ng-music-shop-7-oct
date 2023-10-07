@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'music-shop';
+
+  topAlbumHeading: string = "Top Albums";
+  latestAlbumHeading: string = "Latest Albums";
+  bollywoodAlbumHeading: string = "Bollywood Albums";
+
 }
