@@ -9,5 +9,6 @@ import { Album } from 'src/app/interfaces/Album';
 export class AlbumCardComponent {
 
   @Input() album!: Album
+  
 
 }

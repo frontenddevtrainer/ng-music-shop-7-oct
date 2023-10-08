@@ -12,7 +12,10 @@
     <div class="text-left">
         <h3 class="text-md font-bold mb-1">{{album.name}}</h3>
         <p class="text-sm mb-2 text-gray-400">By {{album.singers}}</p>
-        <p class="text-sm mb-2 text-green-200">${{album.price}}</p>
+        <p class="text-sm mb-2 text-green-200">{{album.price | currency }}</p>
+
+        <!-- Override currency with param if needed. -->
+        <!-- <p class="text-sm mb-2 text-green-200">{{album.price | currency : "USD" }}</p> -->
 
         <!-- This is a demo for ng-container and using 2 * based directives. -->
         <!-- <ng-container *ngFor="let singer of album.singers">
@@ -24,17 +27,19 @@
         </ng-container> -->
 
         <!-- Add to Cart Icon -->
-        <a *ngIf="!album.isPurchasedByUser else playFromLibrary" href="#"
+        <a *ngIf="!album.isPurchasedByUser && !album.newRelesedDate" href="#"
             class="inline-flex items-center text-green-400 hover:text-green-300">
             <span class="material-icons"> shopping_cart </span>
             <span class="ml-1">Add to Cart</span>
         </a>
 
+        <a *ngIf="album.isPurchasedByUser" href="#" class="inline-flex items-center text-green-400 hover:text-green-300">
+            <span class="ml-1">Play from Library</span>
+        </a>
+
+        <a *ngIf="album.newRelesedDate" href="#" class="inline-flex items-center text-green-400 hover:text-green-300">
+            <span class="ml-1">Releasing on: {{album.newRelesedDate | date : 'mediumDate' }}</span>
+        </a>
+
     </div>
 </div>
-
-<ng-template #playFromLibrary>
-    <a *ngIf="album.isPurchasedByUser" href="#" class="inline-flex items-center text-green-400 hover:text-green-300">
-        <span class="ml-1">Play from Library</span>
-    </a>
-</ng-template>

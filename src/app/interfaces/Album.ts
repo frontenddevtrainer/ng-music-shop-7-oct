@@ -13,5 +13,5 @@ export interface Album {
         thumbnail: string
     },
     isPurchasedByUser?: boolean,
-    newRelesedDate?: Date
+    newRelesedDate?: Date | string // string = timestamp
 }

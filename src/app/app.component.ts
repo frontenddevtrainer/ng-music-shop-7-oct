@@ -39,14 +39,14 @@ export class AppComponent {
         name: "Great Song",
         singer: ["Singer C"]
       }],
-      newRelesedDate: new Date()
+      newRelesedDate: '2023-10-08T16:13:46.338Z'
     },
     {
       name: "Music 303",
       albumArt: {
         thumbnail: "https://via.placeholder.com/150"
       },
-      price: 200,
+      price: 200000,
       singers: ["Singer D", "Singer E"],
       songs: [{
         duration: 549,
