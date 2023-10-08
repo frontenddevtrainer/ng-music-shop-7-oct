@@ -7,6 +7,7 @@ import { MainHeaderComponent } from './components/main-header/main-header.compon
 import { MainBannerComponent } from './components/main-banner/main-banner.component';
 import { AlbumCardComponent } from './components/album-card/album-card.component';
 import { AlbumListingComponent } from './components/album-listing/album-listing.component';
+import { DATE_PIPE_DEFAULT_OPTIONS } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,10 @@ import { AlbumListingComponent } from './components/album-listing/album-listing.
   ],
   providers: [
     {
-      provide : DEFAULT_CURRENCY_CODE, useValue : "INR"
+      provide: DEFAULT_CURRENCY_CODE, useValue: "INR"
+    },
+    {
+      provide: DATE_PIPE_DEFAULT_OPTIONS, useValue: { dateFormat: 'shortDate' }
     }
   ],
   bootstrap: [AppComponent]
