@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Album } from 'src/app/interfaces/Album';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'ms-album-card',
@@ -8,7 +9,18 @@ import { Album } from 'src/app/interfaces/Album';
 })
 export class AlbumCardComponent {
 
+
+
+  constructor(private _cart: CartService) {
+
+  }
+
   @Input() album!: Album
-  
+
+
+
+  addToCart(item: Album) {
+    this._cart.addToCart(item);
+  }
 
 }

@@ -27,7 +27,7 @@
         </ng-container> -->
 
         <!-- Add to Cart Icon -->
-        <a *ngIf="!album.isPurchasedByUser && !album.newRelesedDate" href="#"
+        <a *ngIf="!album.isPurchasedByUser && !album.newRelesedDate" (click)="addToCart(album)"
             class="inline-flex items-center text-green-400 hover:text-green-300">
             <span class="material-icons"> shopping_cart </span>
             <span class="ml-1">Add to Cart</span>

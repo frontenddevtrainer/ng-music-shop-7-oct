@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Album } from 'src/app/interfaces/Album';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'ms-main-header',
@@ -6,5 +8,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./main-header.component.scss']
 })
 export class MainHeaderComponent {
+
+  cartItems: Album[] = []
+
+  constructor(private _cart: CartService) {
+      this.cartItems = _cart.cartItems
+  }
+
 
 }
