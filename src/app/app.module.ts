@@ -26,7 +26,7 @@ import { DATE_PIPE_DEFAULT_OPTIONS } from '@angular/common';
       provide: DEFAULT_CURRENCY_CODE, useValue: "INR"
     },
     {
-      provide: DATE_PIPE_DEFAULT_OPTIONS, useValue: { dateFormat: 'shortDate' }
+      provide: DATE_PIPE_DEFAULT_OPTIONS, useValue: { dateFormat: 'mediumDate' }
     }
   ],
   bootstrap: [AppComponent]
