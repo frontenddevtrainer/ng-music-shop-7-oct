@@ -24,7 +24,8 @@ export class AppComponent {
         duration: 430,
         name: "Awesome Song",
         singer: ["Singer A"]
-      }]
+      }],
+      isPurchasedByUser: true,
     },
     {
       name: "Music 202",
@@ -37,7 +38,21 @@ export class AppComponent {
         duration: 600,
         name: "Great Song",
         singer: ["Singer C"]
-      }]
+      }],
+      newRelesedDate: new Date()
+    },
+    {
+      name: "Music 303",
+      albumArt: {
+        thumbnail: "https://via.placeholder.com/150"
+      },
+      price: 200,
+      singers: ["Singer D", "Singer E"],
+      songs: [{
+        duration: 549,
+        name: "Great Song",
+        singer: ["Singer C"]
+      }],
     }
   ]
 

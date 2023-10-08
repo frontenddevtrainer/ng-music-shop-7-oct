@@ -11,5 +11,7 @@ export interface Album {
     price: number,
     albumArt: {
         thumbnail: string
-    }
+    },
+    isPurchasedByUser?: boolean,
+    newRelesedDate?: Date
 }
