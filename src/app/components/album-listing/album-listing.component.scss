@@ -1,0 +1,7 @@
+.odd {
+
+}
+
+::ng-deep .even > div {
+    background-color: rgba(31,41,55, .5);
+}
