@@ -1,13 +1,28 @@
 import { Injectable } from '@angular/core';
 import { Album } from '../interfaces/Album';
+import { BehaviorSubject } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AlbumsService {
+  private topAlbums: BehaviorSubject<Album[]> = new BehaviorSubject<Album[]>(
+    []
+  );
+  topAlbums$ = this.topAlbums.asObservable();
 
-  constructor() { }
+  constructor(private _http: HttpClient) {}
 
-  topAlbums: Album[] = []
-
+  getTopAlbums() {
+    this._http.get<Album[]>('http://localhost:3000/top-albums').subscribe({
+      next: (response) => {
+        this.topAlbums.next(response);
+      },
+      error: ()=>{
+        this.topAlbums.next([]);
+        // alert("Top albums cannot be loaded.")
+      }
+    });
+  }
 }
