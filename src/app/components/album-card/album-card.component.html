@@ -2,7 +2,9 @@
     <!-- Image and Play Button -->
     <div class="relative">
         <img src="{{album.albumArt.thumbnail}}" alt="Album" class="w-full rounded mb-2" />
-        <button
+        <button [@growShrink]="isHovering ? 'grow' : 'shrink'"
+            (mouseenter)="onPlayHover()"
+            (mouseleave)="onPlayOut()"
             class="absolute bottom-2 right-2 bg-green-400 w-10 h-10 rounded-full flex items-center justify-center hover:bg-green-300">
             <span class="material-icons text-white"> play_arrow </span>
         </button>
@@ -33,7 +35,8 @@
             <span class="ml-1">Add to Cart</span>
         </a>
 
-        <a *ngIf="album.isPurchasedByUser" href="#" class="inline-flex items-center text-green-400 hover:text-green-300">
+        <a *ngIf="album.isPurchasedByUser" href="#"
+            class="inline-flex items-center text-green-400 hover:text-green-300">
             <span class="ml-1">Play from Library</span>
         </a>
 
