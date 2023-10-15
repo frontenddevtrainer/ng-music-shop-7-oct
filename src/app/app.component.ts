@@ -14,14 +14,18 @@ export class AppComponent implements OnInit {
   }
   
   ngOnInit(): void {
-    this._albums.getTopAlbums()
+    this._albums.getTopAlbums();
+    this._albums.getBollywoodAlbums()
+    this._albums.getLatestAlbums()
   }
 
   topAlbumHeading: string = "Top Albums";
   latestAlbumHeading: string = "Latest Albums";
   bollywoodAlbumHeading: string = "Bollywood Albums";
 
-  albums$ = this._albums.topAlbums$;
+  topAlbums$ = this._albums.topAlbums$;
+  latestAlbums$ = this._albums.latestAlbums$;
+  bollywoodAlbums$ = this._albums.bollywoodAlbums$;
 
 
 

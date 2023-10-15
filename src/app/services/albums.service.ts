@@ -10,7 +10,18 @@ export class AlbumsService {
   private topAlbums: BehaviorSubject<Album[]> = new BehaviorSubject<Album[]>(
     []
   );
+
+  private latestAlbums: BehaviorSubject<Album[]> = new BehaviorSubject<Album[]>(
+    []
+  );
+
+  private bollywoodAlbums: BehaviorSubject<Album[]> = new BehaviorSubject<
+    Album[]
+  >([]);
+
   topAlbums$ = this.topAlbums.asObservable();
+  latestAlbums$ = this.latestAlbums.asObservable();
+  bollywoodAlbums$ = this.bollywoodAlbums.asObservable();
 
   constructor(private _http: HttpClient) {}
 
@@ -19,10 +30,36 @@ export class AlbumsService {
       next: (response) => {
         this.topAlbums.next(response);
       },
-      error: ()=>{
+      error: () => {
         this.topAlbums.next([]);
         // alert("Top albums cannot be loaded.")
-      }
+      },
     });
+  }
+
+  getLatestAlbums() {
+    this._http.get<Album[]>('http://localhost:3000/latest-albums').subscribe({
+      next: (response) => {
+        this.latestAlbums.next(response);
+      },
+      error: () => {
+        this.latestAlbums.next([]);
+        // alert("Top albums cannot be loaded.")
+      },
+    });
+  }
+
+  getBollywoodAlbums() {
+    this._http
+      .get<Album[]>('http://localhost:3000/bollywood-albums')
+      .subscribe({
+        next: (response) => {
+          this.bollywoodAlbums.next(response);
+        },
+        error: () => {
+          this.bollywoodAlbums.next([]);
+          // alert("Top albums cannot be loaded.")
+        },
+      });
   }
 }

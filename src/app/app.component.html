@@ -2,10 +2,24 @@
 <main class="container mx-auto p-8">
   <ms-main-banner></ms-main-banner>
 
-  <ng-container *ngIf="albums$ | async as albums; else loading">
+  <ng-container *ngIf="topAlbums$ | async as albums; else loading">
     <ms-album-listing
       [albums]="albums"
       [heading]="topAlbumHeading"
+    ></ms-album-listing>
+  </ng-container>
+
+  <ng-container *ngIf="bollywoodAlbums$ | async as albums; else loading">
+    <ms-album-listing
+      [albums]="albums"
+      [heading]="bollywoodAlbumHeading"
+    ></ms-album-listing>
+  </ng-container>
+
+  <ng-container *ngIf="latestAlbums$ | async as albums; else loading">
+    <ms-album-listing
+      [albums]="albums"
+      [heading]="latestAlbumHeading"
     ></ms-album-listing>
   </ng-container>
 
