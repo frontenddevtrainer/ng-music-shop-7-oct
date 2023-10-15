@@ -1,1 +1,77 @@
-<p>admin-add-album-screen works!</p>
+<div class="bg-gray-800 p-10 w-100 rounded-lg">
+  <h1 class="text-3xl font-bold mb-6">Add Album</h1>
+  <form #addAlbumForm="ngForm" (ngSubmit)="addNewAlbum()">
+    <!-- Email -->
+    <div class="mb-4">
+      <label class="block text-lg font-medium">Name</label>
+      <input
+        [(ngModel)]="addAlbumData.name"
+        name="name"
+        type="text"
+        class="bg-gray-700 text-white rounded px-6 py-3 w-full"
+        placeholder="Name"
+      />
+    </div>
+
+    <div class="mb-4">
+      <label class="block text-lg font-medium">Price</label>
+      <input
+        [(ngModel)]="addAlbumData.price"
+        name="price"
+        type="number"
+        class="bg-gray-700 text-white rounded px-6 py-3 w-full"
+        placeholder="Price"
+      />
+    </div>
+
+    <h1 class="text-lg font-medium">Singers</h1>
+    <div class="mb-4">
+      <label class="block text-lg font-medium">Singer</label>
+      <input
+        type="text"
+        class="bg-gray-700 text-white rounded px-6 py-3 w-full"
+        placeholder="Singer"
+      />
+    </div>
+
+    <h1 class="text-lg font-medium">Songs</h1>
+
+    <div class="mb-4">
+      <label class="block text-lg font-medium">Name</label>
+      <input
+        type="text"
+        class="bg-gray-700 text-white rounded px-6 py-3 w-full"
+        placeholder="Singer"
+      />
+    </div>
+    <div class="mb-4">
+      <label class="block text-lg font-medium">Duration</label>
+      <input
+        type="text"
+        class="bg-gray-700 text-white rounded px-6 py-3 w-full"
+        placeholder="Singer"
+      />
+    </div>
+    <div class="mb-4">
+      <label class="block text-lg font-medium">Singer</label>
+      <input
+        type="text"
+        class="bg-gray-700 text-white rounded px-6 py-3 w-full"
+        placeholder="Singer"
+      />
+    </div>
+
+    <!-- Submit Button -->
+    <button
+      class="bg-green-500 text-white px-12 py-4 rounded hover:bg-green-400 w-full"
+    >
+      Login
+    </button>
+  </form>
+  <p class="mt-4 text-center">
+    Don't have an account?
+    <a href="./register.html" class="text-green-400 hover:underline"
+      >Register</a
+    >
+  </p>
+</div>

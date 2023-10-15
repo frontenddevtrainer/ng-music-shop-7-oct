@@ -54,7 +54,7 @@ export class AlbumsService {
       .get<Album[]>('http://localhost:3000/bollywood-albums')
       .subscribe({
         next: (response) => {
-          // 200 
+          // 200
           this.bollywoodAlbums.next(response);
         },
         error: () => {
@@ -63,5 +63,9 @@ export class AlbumsService {
           // alert("Top albums cannot be loaded.")
         },
       });
+  }
+
+  addNewAlbum(album: Partial<Album>) {
+    return this._http.post('http://localhost:3000/top-albums', album);
   }
 }
