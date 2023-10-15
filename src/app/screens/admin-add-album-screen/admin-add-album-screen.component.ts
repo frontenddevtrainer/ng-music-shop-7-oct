@@ -11,6 +11,7 @@ export class AdminAddAlbumScreenComponent {
   addAlbumData = {
     name: '',
     price: 0,
+    singers: [''],
   };
 
   constructor(private _albums: AlbumsService) {}
@@ -19,5 +20,16 @@ export class AdminAddAlbumScreenComponent {
     this._albums.addNewAlbum(this.addAlbumData).subscribe((response) => {
       console.log(response);
     });
+  }
+
+  updateSingerValue(singer: number, value: any) {
+    if (value && value !== undefined) {
+      console.log(value.value);
+      this.addAlbumData.singers[singer] = value.value;
+    }
+  }
+
+  addNewSingerToAlbum(){
+    this.addAlbumData.singers.push('');
   }
 }

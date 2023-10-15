@@ -25,14 +25,24 @@
     </div>
 
     <h1 class="text-lg font-medium">Singers</h1>
-    <div class="mb-4">
+    <div
+      class="mb-4"
+      *ngFor="let control of addAlbumData.singers; let i = index"
+    >
       <label class="block text-lg font-medium">Singer</label>
       <input
         type="text"
         class="bg-gray-700 text-white rounded px-6 py-3 w-full"
         placeholder="Singer"
+        id="{{ i }}"
+        name="{{ i }}"
+        [ngModel]="addAlbumData.singers[i]"
+        (input)="updateSingerValue(i, $event.target)"
       />
     </div>
+    <button type="button" (click)="addNewSingerToAlbum()">Add Singer</button>
+
+    {{ addAlbumData | json }}
 
     <h1 class="text-lg font-medium">Songs</h1>
 

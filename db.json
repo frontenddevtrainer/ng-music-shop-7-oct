@@ -74,6 +74,88 @@
       "name": "Angular Learning",
       "price": 1000,
       "id": 5
+    },
+    {
+      "name": "",
+      "price": 0,
+      "singers": [
+        "",
+        ""
+      ],
+      "id": 6
+    },
+    {
+      "name": "",
+      "price": 0,
+      "singers": [
+        "",
+        "",
+        ""
+      ],
+      "id": 7
+    },
+    {
+      "name": "",
+      "price": 0,
+      "singers": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "id": 8
+    },
+    {
+      "name": "",
+      "price": 0,
+      "singers": [
+        "1",
+        ""
+      ],
+      "id": 9
+    },
+    {
+      "name": "",
+      "price": 0,
+      "singers": [
+        "1",
+        "2",
+        ""
+      ],
+      "id": 10
+    },
+    {
+      "name": "",
+      "price": 0,
+      "singers": [
+        "1",
+        "2",
+        "3",
+        ""
+      ],
+      "id": 11
+    },
+    {
+      "name": "def",
+      "price": 1000,
+      "singers": [
+        "11",
+        "22",
+        "33",
+        "34"
+      ],
+      "id": 12
+    },
+    {
+      "name": "",
+      "price": 0,
+      "singers": [
+        "1",
+        "2",
+        "21",
+        "212"
+      ],
+      "id": 13
     }
   ],
   "latest-albums": [
