@@ -54,10 +54,12 @@ export class AlbumsService {
       .get<Album[]>('http://localhost:3000/bollywood-albums')
       .subscribe({
         next: (response) => {
+          // 200 
           this.bollywoodAlbums.next(response);
         },
         error: () => {
           this.bollywoodAlbums.next([]);
+          // 400 500
           // alert("Top albums cannot be loaded.")
         },
       });

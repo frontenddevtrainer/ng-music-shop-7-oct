@@ -11,6 +11,8 @@ import { MainBannerComponent } from './components/main-banner/main-banner.compon
 import { AlbumCardComponent } from './components/album-card/album-card.component';
 import { AlbumListingComponent } from './components/album-listing/album-listing.component';
 import { DATE_PIPE_DEFAULT_OPTIONS } from '@angular/common';
+import { HomeScreenComponent } from './screens/home-screen/home-screen.component';
+import { AdminAddAlbumScreenComponent } from './screens/admin-add-album-screen/admin-add-album-screen.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { DATE_PIPE_DEFAULT_OPTIONS } from '@angular/common';
     MainHeaderComponent,
     MainBannerComponent,
     AlbumCardComponent,
-    AlbumListingComponent
+    AlbumListingComponent,
+    HomeScreenComponent,
+    AdminAddAlbumScreenComponent
   ],
   imports: [
     BrowserModule,
