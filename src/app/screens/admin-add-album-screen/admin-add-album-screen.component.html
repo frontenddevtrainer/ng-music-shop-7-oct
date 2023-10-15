@@ -12,9 +12,15 @@
         placeholder="Name"
         required
         #nameControl="ngModel"
+        minlength="5"
       />
-      <p class="text-red-500" *ngIf="nameControl.hasError('required')">Name is required</p>
-
+      <p class="text-red-500" *ngIf="nameControl.hasError('required')">
+        Name is required
+      </p>
+      <p class="text-red-500" *ngIf="nameControl.hasError('minlength')">
+        Name has be atleast
+        {{nameControl.errors?.['minlength'].requiredLength}} chars
+      </p>
     </div>
 
     <div class="mb-4">
@@ -28,8 +34,9 @@
         required
         #priceControl="ngModel"
       />
-      <p class="text-red-500" *ngIf="priceControl.hasError('required')">Price is required</p>
-
+      <p class="text-red-500" *ngIf="priceControl.hasError('required')">
+        Price is required
+      </p>
     </div>
 
     <h1 class="text-lg font-medium">Singers</h1>
@@ -49,7 +56,9 @@
         #nameControl="ngModel"
         required
       />
-      <p class="text-red-500" *ngIf="nameControl.hasError('required')">Name is required</p>
+      <p class="text-red-500" *ngIf="nameControl.hasError('required')">
+        Name is required
+      </p>
     </div>
     <button type="button" (click)="addNewSingerToAlbum()">Add Singer</button>
 
