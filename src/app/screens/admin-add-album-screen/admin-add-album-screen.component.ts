@@ -9,15 +9,15 @@ import { AlbumsService } from 'src/app/services/albums.service';
 })
 export class AdminAddAlbumScreenComponent {
   addAlbumData = {
-    name: '',
-    price: 0,
-    singers: [''],
+    name: null,
+    price: null,
+    singers: [""],
   };
 
   constructor(private _albums: AlbumsService) {}
 
   addNewAlbum() {
-    this._albums.addNewAlbum(this.addAlbumData).subscribe((response) => {
+    this._albums.addNewAlbum(this.addAlbumData as any).subscribe((response) => {
       console.log(response);
     });
   }
@@ -29,7 +29,7 @@ export class AdminAddAlbumScreenComponent {
     }
   }
 
-  addNewSingerToAlbum(){
+  addNewSingerToAlbum() {
     this.addAlbumData.singers.push('');
   }
 }

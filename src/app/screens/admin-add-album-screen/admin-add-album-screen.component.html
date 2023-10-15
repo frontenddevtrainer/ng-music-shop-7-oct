@@ -10,7 +10,11 @@
         type="text"
         class="bg-gray-700 text-white rounded px-6 py-3 w-full"
         placeholder="Name"
+        required
+        #nameControl="ngModel"
       />
+      <p class="text-red-500" *ngIf="nameControl.hasError('required')">Name is required</p>
+
     </div>
 
     <div class="mb-4">
@@ -21,7 +25,11 @@
         type="number"
         class="bg-gray-700 text-white rounded px-6 py-3 w-full"
         placeholder="Price"
+        required
+        #priceControl="ngModel"
       />
+      <p class="text-red-500" *ngIf="priceControl.hasError('required')">Price is required</p>
+
     </div>
 
     <h1 class="text-lg font-medium">Singers</h1>
@@ -38,11 +46,12 @@
         name="{{ i }}"
         [ngModel]="addAlbumData.singers[i]"
         (input)="updateSingerValue(i, $event.target)"
+        #nameControl="ngModel"
+        required
       />
+      <p class="text-red-500" *ngIf="nameControl.hasError('required')">Name is required</p>
     </div>
     <button type="button" (click)="addNewSingerToAlbum()">Add Singer</button>
-
-    {{ addAlbumData | json }}
 
     <h1 class="text-lg font-medium">Songs</h1>
 
@@ -73,9 +82,14 @@
 
     <!-- Submit Button -->
     <button
+      [ngClass]="{
+        'bg-gray-400 text-white cursor-not-allowed opacity-50':
+          !addAlbumForm.valid
+      }"
+      [disabled]="!addAlbumForm.valid"
       class="bg-green-500 text-white px-12 py-4 rounded hover:bg-green-400 w-full"
     >
-      Login
+      Add Album
     </button>
   </form>
   <p class="mt-4 text-center">
