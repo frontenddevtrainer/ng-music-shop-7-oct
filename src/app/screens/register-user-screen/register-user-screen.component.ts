@@ -25,7 +25,7 @@ export class RegisterUserScreenComponent {
     firstname: [null, [Validators.required]],
     lastname: [null, [Validators.required]],
     dob: [null, [Validators.required]],
-    password: [null, [Validators.required, Validators.minLength(8)]],
+    password: [null, [Validators.required, Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/) ,Validators.minLength(8)]],
     confirmPassword: [null, [Validators.required]],
   });
 
