@@ -1,9 +1,23 @@
-import { Component, Input, forwardRef } from '@angular/core';
+import {
+  Component,
+  Injector,
+  Input,
+  OnInit,
+  Optional,
+  Self,
+  forwardRef,
+} from '@angular/core';
 import {
   ControlValueAccessor,
   NG_VALUE_ACCESSOR,
-  Validator,
+  NgControl,
 } from '@angular/forms';
+
+export const ERROR_MESSAGES: any = {
+  required: 'This is required',
+  minlength: "Value doesn't matches min length",
+  email: 'Email format is not correct',
+};
 
 @Component({
   selector: 'ms-text-control',
@@ -17,9 +31,27 @@ import {
     },
   ],
 })
-export class TextControlComponent implements ControlValueAccessor {
+export class TextControlComponent implements ControlValueAccessor, OnInit {
   @Input() label: string = '';
   @Input() placeholder: string = this.label;
+  control!: NgControl;
+
+  constructor(private injector: Injector) {}
+
+  ngOnInit(): void {
+    this.control = this.injector.get(NgControl);
+    if (this.control) {
+      this.control.valueAccessor = this;
+    }
+  }
+
+  get errorMessage() {
+    if (this.control.errors) {
+      const errors = Object.keys(this.control.errors);
+      return ERROR_MESSAGES[errors[0]] as string;
+    }
+    return null;
+  }
 
   value!: string;
   onChange: any = () => {};
@@ -39,5 +71,4 @@ export class TextControlComponent implements ControlValueAccessor {
     this.value = target.value;
     this.onChange(target.value);
   }
-
 }

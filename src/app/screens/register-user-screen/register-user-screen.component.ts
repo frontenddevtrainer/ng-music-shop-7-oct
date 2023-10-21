@@ -17,7 +17,8 @@ export class RegisterUserScreenComponent {
       firstName: string,
       lastName: string,
       dob: Timestamp,
-      password: string
+      password: string,
+      favSingers : ["abc", "def"]
     }
   */
 
