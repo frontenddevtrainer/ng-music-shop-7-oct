@@ -1,0 +1,78 @@
+<div class="bg-gray-800 p-10 w-100 rounded-lg">
+  <h1 class="text-3xl font-bold mb-6">Register User</h1>
+  <form [formGroup]="form">
+    <!-- Email -->
+    <div class="mb-4">
+      <label class="block text-lg font-medium">Email</label>
+      <input
+        type="text"
+        class="bg-gray-700 text-white rounded px-6 py-3 w-full"
+        placeholder="Name"
+        formControlName="email"
+      />
+    </div>
+
+    <div class="mb-4">
+      <label class="block text-lg font-medium">Firstname</label>
+      <input
+        type="text"
+        class="bg-gray-700 text-white rounded px-6 py-3 w-full"
+        placeholder="Firstname"
+        formControlName="firstname"
+      />
+    </div>
+
+    <div class="mb-4">
+      <label class="block text-lg font-medium">Lastname</label>
+      <input
+        type="text"
+        class="bg-gray-700 text-white rounded px-6 py-3 w-full"
+        placeholder="Lastname"
+        formControlName="lastname"
+      />
+    </div>
+
+    <div class="mb-4">
+      <label class="block text-lg font-medium">Date of Birth</label>
+      <input
+        type="text"
+        class="bg-gray-700 text-white rounded px-6 py-3 w-full"
+        placeholder="Date of Birth"
+        formControlName="dob"
+      />
+    </div>
+
+    <div class="mb-4">
+      <label class="block text-lg font-medium">Password</label>
+      <input
+        type="text"
+        class="bg-gray-700 text-white rounded px-6 py-3 w-full"
+        placeholder="Password"
+        formControlName="password"
+      />
+    </div>
+
+    <div class="mb-4">
+      <label class="block text-lg font-medium">Confirm Password</label>
+      <input
+        type="text"
+        class="bg-gray-700 text-white rounded px-6 py-3 w-full"
+        placeholder="Confirm Password"
+        formControlName="confirmPassword"
+      />
+    </div>
+
+    {{form.value | json}}
+
+    <!-- Submit Button -->
+    <button
+      class="bg-green-500 text-white px-12 py-4 rounded hover:bg-green-400 w-full"
+    >
+      Register User
+    </button>
+  </form>
+  <p class="mt-4 text-center">
+    Already have an account?
+    <a routerLink="/user/login" class="text-green-400 hover:underline">Login</a>
+  </p>
+</div>

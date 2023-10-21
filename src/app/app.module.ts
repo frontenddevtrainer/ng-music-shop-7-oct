@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http'
 
 // Template Driven - FormsModule
 // Reactive Forms - Reactive Module
-import { FormsModule } from "@angular/forms"
+import { FormsModule, ReactiveFormsModule } from "@angular/forms"
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +16,7 @@ import { AlbumListingComponent } from './components/album-listing/album-listing.
 import { DATE_PIPE_DEFAULT_OPTIONS } from '@angular/common';
 import { HomeScreenComponent } from './screens/home-screen/home-screen.component';
 import { AdminAddAlbumScreenComponent } from './screens/admin-add-album-screen/admin-add-album-screen.component';
+import { RegisterUserScreenComponent } from './screens/register-user-screen/register-user-screen.component';
 
 @NgModule({
   declarations: [
@@ -25,14 +26,16 @@ import { AdminAddAlbumScreenComponent } from './screens/admin-add-album-screen/a
     AlbumCardComponent,
     AlbumListingComponent,
     HomeScreenComponent,
-    AdminAddAlbumScreenComponent
+    AdminAddAlbumScreenComponent,
+    RegisterUserScreenComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     {
