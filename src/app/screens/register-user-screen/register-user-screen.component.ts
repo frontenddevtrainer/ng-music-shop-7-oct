@@ -22,7 +22,7 @@ export class RegisterUserScreenComponent {
   */
 
   form: FormGroup = this._fb.group({
-    email: [null, [Validators.required, Validators.email]],
+    email: ["abc@def.com", [Validators.required, Validators.email]],
     firstname: [null, [Validators.required]],
     lastname: [null, [Validators.required]],
     dob: [null, [Validators.required]],

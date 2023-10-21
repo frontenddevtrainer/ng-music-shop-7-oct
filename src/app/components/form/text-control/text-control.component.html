@@ -1,0 +1,17 @@
+<label class="block text-lg font-medium">{{ label }}</label>
+<input
+  type="text"
+  class="bg-gray-700 text-white rounded px-6 py-3 w-full"
+  placeholder="{{ placeholder }}"
+  [value]="value"
+  (input)="handleChange($event.target)"
+/>
+
+<!-- <p *ngIf="controls['email'].errors && controls['email'].touched">
+    <span *ngIf="controls['email'].errors?.['required']"
+      >Email is required</span
+    >
+    <span *ngIf="controls['email'].errors?.['email']"
+      >Email format is not correct.</span
+    >
+  </p> -->

@@ -17,6 +17,7 @@ import { DATE_PIPE_DEFAULT_OPTIONS } from '@angular/common';
 import { HomeScreenComponent } from './screens/home-screen/home-screen.component';
 import { AdminAddAlbumScreenComponent } from './screens/admin-add-album-screen/admin-add-album-screen.component';
 import { RegisterUserScreenComponent } from './screens/register-user-screen/register-user-screen.component';
+import { TextControlComponent } from './components/form/text-control/text-control.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { RegisterUserScreenComponent } from './screens/register-user-screen/regi
     HomeScreenComponent,
     AdminAddAlbumScreenComponent,
     RegisterUserScreenComponent,
+    TextControlComponent,
   ],
   imports: [
     BrowserModule,

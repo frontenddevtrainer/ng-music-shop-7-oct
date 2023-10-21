@@ -1,82 +1,29 @@
 <div class="bg-gray-800 p-10 w-100 rounded-lg">
   <h1 class="text-3xl font-bold mb-6">Register User</h1>
   <form [formGroup]="form">
+    {{form.value | json}}
     <!-- Email -->
     <div class="mb-4">
-      <label class="block text-lg font-medium">Email</label>
-      <input
-        type="text"
-        class="bg-gray-700 text-white rounded px-6 py-3 w-full"
-        placeholder="Name"
-        formControlName="email"
-      />
+      <ms-text-control label="Email" formControlName="email"/>
     </div>
-    <p *ngIf="controls['email'].errors && controls['email'].touched">
-      <span *ngIf="controls['email'].errors?.['required']"
-        >Email is required</span
-      >
-      <span *ngIf="controls['email'].errors?.['email']"
-        >Email format is not correct.</span
-      >
-    </p>
-
     <div class="mb-4">
-      <label class="block text-lg font-medium">Firstname</label>
-      <input
-        type="text"
-        class="bg-gray-700 text-white rounded px-6 py-3 w-full"
-        placeholder="Firstname"
-        formControlName="firstname"
-      />
+      <ms-text-control label="Firstname" formControlName="firstname"/>
     </div>
 
     <div class="mb-4">
-      <label class="block text-lg font-medium">Lastname</label>
-      <input
-        type="text"
-        class="bg-gray-700 text-white rounded px-6 py-3 w-full"
-        placeholder="Lastname"
-        formControlName="lastname"
-      />
+      <ms-text-control label="Lastname" formControlName="lastname"/>
     </div>
 
     <div class="mb-4">
-      <label class="block text-lg font-medium">Date of Birth</label>
-      <input
-        type="text"
-        class="bg-gray-700 text-white rounded px-6 py-3 w-full"
-        placeholder="Date of Birth"
-        formControlName="dob"
-      />
+      <ms-text-control label="Date of Birth" formControlName="dob"/>
     </div>
 
     <div class="mb-4">
-      <label class="block text-lg font-medium">Password</label>
-      <input
-        type="password"
-        class="bg-gray-700 text-white rounded px-6 py-3 w-full"
-        placeholder="Password"
-        formControlName="password"
-      />
+      <ms-text-control label="Password" formControlName="password"/>
     </div>
 
-    <p *ngIf="controls['password'].errors && controls['password'].touched">
-      <span *ngIf="controls['password'].errors?.['required']"
-        >Password is required</span
-      >
-      <span *ngIf="controls['password'].errors?.['invalidPasswordFormat']"
-        >Password format is not correct</span
-      >
-    </p>
-
     <div class="mb-4">
-      <label class="block text-lg font-medium">Confirm Password</label>
-      <input
-        type="password"
-        class="bg-gray-700 text-white rounded px-6 py-3 w-full"
-        placeholder="Confirm Password"
-        formControlName="confirmPassword"
-      />
+      <ms-text-control label="Confirm Password" formControlName="confirmPassword" />
     </div>
 
     <!-- Submit Button -->
