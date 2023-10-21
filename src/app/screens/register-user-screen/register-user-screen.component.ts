@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { PasswordValidator } from 'src/app/validators/password';
 
 @Component({
   selector: 'ms-register-user-screen',
@@ -25,7 +26,7 @@ export class RegisterUserScreenComponent {
     firstname: [null, [Validators.required]],
     lastname: [null, [Validators.required]],
     dob: [null, [Validators.required]],
-    password: [null, [Validators.required, Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/) ,Validators.minLength(8)]],
+    password: [null, [Validators.required, Validators.minLength(8), PasswordValidator()]],
     confirmPassword: [null, [Validators.required]],
   });
 

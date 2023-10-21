@@ -53,17 +53,26 @@
     <div class="mb-4">
       <label class="block text-lg font-medium">Password</label>
       <input
-        type="text"
+        type="password"
         class="bg-gray-700 text-white rounded px-6 py-3 w-full"
         placeholder="Password"
         formControlName="password"
       />
     </div>
 
+    <p *ngIf="controls['password'].errors && controls['password'].touched">
+      <span *ngIf="controls['password'].errors?.['required']"
+        >Password is required</span
+      >
+      <span *ngIf="controls['password'].errors?.['invalidPasswordFormat']"
+        >Password format is not correct</span
+      >
+    </p>
+
     <div class="mb-4">
       <label class="block text-lg font-medium">Confirm Password</label>
       <input
-        type="text"
+        type="password"
         class="bg-gray-700 text-white rounded px-6 py-3 w-full"
         placeholder="Confirm Password"
         formControlName="confirmPassword"
