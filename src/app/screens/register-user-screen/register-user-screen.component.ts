@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'ms-register-user-screen',
@@ -9,8 +9,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class RegisterUserScreenComponent {
   constructor(private _fb: FormBuilder) {}
 
-
-  // POST /api/register 
+  // POST /api/register
   /*
     {
       email: string,
@@ -22,11 +21,39 @@ export class RegisterUserScreenComponent {
   */
 
   form: FormGroup = this._fb.group({
-    email: [null],
-    firstname: [null],
-    lastname: [null],
-    dob: [null],
-    password: [null],
-    confirmPassword: [null],
+    email: [null, [Validators.required, Validators.email]],
+    firstname: [null, [Validators.required]],
+    lastname: [null, [Validators.required]],
+    dob: [null, [Validators.required]],
+    password: [null, [Validators.required, Validators.minLength(8)]],
+    confirmPassword: [null, [Validators.required]],
   });
+
+  get controls() {
+    return this.form.controls;
+  }
+
+  get email() {
+    return this.form.controls['email'];
+  }
+
+  get firstname() {
+    return this.form.controls['firstname'];
+  }
+
+  get lastname() {
+    return this.form.controls['lastname'];
+  }
+
+  get dob() {
+    return this.form.controls['dob'];
+  }
+
+  get password() {
+    return this.form.controls['password'];
+  }
+
+  get confirmPassword() {
+    return this.form.controls['confirmPassword'];
+  }
 }

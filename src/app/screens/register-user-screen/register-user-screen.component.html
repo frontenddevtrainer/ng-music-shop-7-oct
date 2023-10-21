@@ -11,6 +11,11 @@
         formControlName="email"
       />
     </div>
+    <p *ngIf="controls['email'].errors && controls['email'].touched">
+      <span *ngIf="controls['email'].errors?.['required']"
+        >Email is required</span
+      >
+    </p>
 
     <div class="mb-4">
       <label class="block text-lg font-medium">Firstname</label>
@@ -61,8 +66,6 @@
         formControlName="confirmPassword"
       />
     </div>
-
-    {{form.value | json}}
 
     <!-- Submit Button -->
     <button
