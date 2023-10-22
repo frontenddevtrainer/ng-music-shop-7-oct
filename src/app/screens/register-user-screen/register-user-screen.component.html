@@ -1,7 +1,6 @@
 <div class="bg-gray-800 p-10 w-100 rounded-lg">
   <h1 class="text-3xl font-bold mb-6">Register User</h1>
-  <form [formGroup]="form">
-    {{ form.value | json }}
+  <form [formGroup]="form" (ngSubmit)="registerUser()">
     <!-- Email -->
     <div class="mb-4">
       <ms-text-control label="Email" formControlName="email" />

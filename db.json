@@ -1,6 +1,20 @@
 {
-  
-  "users": [],
+  "users": [
+    {
+      "email": "abc@def.com",
+      "password": "$2a$10$6ew8YPz.yuWDrWw5KX2VGe/KgLln.uH6J8hlnknoWuNrS8cupWXlm",
+      "firstname": "Abc",
+      "lastname": "Def",
+      "dob": "01/01/2000",
+      "favSingers": [
+        {
+          "name": "Abc",
+          "rating": "5"
+        }
+      ],
+      "id": 1
+    }
+  ],
   "top-albums": [
     {
       "name": "Music 101",

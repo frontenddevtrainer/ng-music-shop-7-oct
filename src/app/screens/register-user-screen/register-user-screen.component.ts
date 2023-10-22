@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserService } from 'src/app/services/user.service';
 import { PasswordValidator } from 'src/app/validators/password';
 
 @Component({
@@ -8,21 +9,9 @@ import { PasswordValidator } from 'src/app/validators/password';
   styleUrls: ['./register-user-screen.component.scss'],
 })
 export class RegisterUserScreenComponent implements OnInit {
-  constructor(private _fb: FormBuilder) {}
+  constructor(private _fb: FormBuilder, private _user: UserService) {}
 
   form!: FormGroup;
-
-  // POST /api/register
-  /*
-    {
-      email: string,
-      firstName: string,
-      lastName: string,
-      dob: Timestamp,
-      password: string,
-      favSingers : ["abc", "def"]
-    }
-  */
 
   ngOnInit(): void {
     this.initForm();
@@ -30,15 +19,15 @@ export class RegisterUserScreenComponent implements OnInit {
 
   initForm() {
     this.form = this._fb.group({
-      email: ['abc@def.com', [Validators.required, Validators.email]],
-      firstname: [null, [Validators.required]],
-      lastname: [null, [Validators.required]],
-      dob: [null, [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
+      firstname: ['', [Validators.required]],
+      lastname: ['', [Validators.required]],
+      dob: ['', [Validators.required]],
       password: [
-        null,
+        '',
         [Validators.required, Validators.minLength(8), PasswordValidator()],
       ],
-      confirmPassword: [null, [Validators.required]],
+      confirmPassword: ['', [Validators.required]],
       favSingers: this._fb.array([]),
     });
 
@@ -52,6 +41,10 @@ export class RegisterUserScreenComponent implements OnInit {
         rating: [null, [Validators.max(5), Validators.min(1)]],
       })
     );
+  }
+
+  registerUser() {
+    this._user.register(this.form.value).subscribe()
   }
 
   get favSingers() {
