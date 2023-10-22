@@ -1,29 +1,49 @@
 <div class="bg-gray-800 p-10 w-100 rounded-lg">
   <h1 class="text-3xl font-bold mb-6">Register User</h1>
   <form [formGroup]="form">
-    {{form.value | json}}
+    {{ form.value | json }}
     <!-- Email -->
     <div class="mb-4">
-      <ms-text-control label="Email" formControlName="email"/>
+      <ms-text-control label="Email" formControlName="email" />
     </div>
     <div class="mb-4">
-      <ms-text-control label="Firstname" formControlName="firstname"/>
-    </div>
-
-    <div class="mb-4">
-      <ms-text-control label="Lastname" formControlName="lastname"/>
+      <ms-text-control label="Firstname" formControlName="firstname" />
     </div>
 
     <div class="mb-4">
-      <ms-text-control label="Date of Birth" formControlName="dob"/>
+      <ms-text-control label="Lastname" formControlName="lastname" />
     </div>
 
     <div class="mb-4">
-      <ms-text-control label="Password" formControlName="password"/>
+      <ms-text-control label="Date of Birth" formControlName="dob" />
     </div>
 
     <div class="mb-4">
-      <ms-text-control label="Confirm Password" formControlName="confirmPassword" />
+      <ms-text-control label="Password" formControlName="password" />
+    </div>
+
+    <div class="mb-4">
+      <ms-text-control
+        label="Confirm Password"
+        formControlName="confirmPassword"
+      />
+    </div>
+
+    <div class="mb-4" formArrayName="favSingers">
+      <h2>Fav Singers</h2>
+
+      <ms-text-control
+        *ngFor="let Singers of favSingers.controls; let i = index"
+        label="Singer #{{ i + 1 }}"
+        [formControlName]="i"
+      />
+      <button
+        type="button"
+        class="bg-green-500 text-white px-12 py-4 rounded hover:bg-green-400 w-full"
+        (click)="addSinger()"
+      >
+        Add more singers
+      </button>
     </div>
 
     <!-- Submit Button -->

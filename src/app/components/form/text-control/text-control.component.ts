@@ -70,5 +70,6 @@ export class TextControlComponent implements ControlValueAccessor, OnInit {
   handleChange(target: any) {
     this.value = target.value;
     this.onChange(target.value);
+    this.onTouched()
   }
 }

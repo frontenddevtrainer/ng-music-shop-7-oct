@@ -5,7 +5,8 @@
   placeholder="{{ placeholder }}"
   [value]="value"
   (input)="handleChange($event.target)"
+  (blur)="onTouched()"
 />
-<p *ngIf="errorMessage">
+<p *ngIf="errorMessage && control.touched">
   {{ errorMessage }}
 </p>

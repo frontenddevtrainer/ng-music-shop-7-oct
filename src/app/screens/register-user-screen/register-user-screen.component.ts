@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PasswordValidator } from 'src/app/validators/password';
 
 @Component({
@@ -23,13 +23,27 @@ export class RegisterUserScreenComponent {
   */
 
   form: FormGroup = this._fb.group({
-    email: ["abc@def.com", [Validators.required, Validators.email]],
+    email: ['abc@def.com', [Validators.required, Validators.email]],
     firstname: [null, [Validators.required]],
     lastname: [null, [Validators.required]],
     dob: [null, [Validators.required]],
-    password: [null, [Validators.required, Validators.minLength(8), PasswordValidator()]],
+    password: [
+      null,
+      [Validators.required, Validators.minLength(8), PasswordValidator()],
+    ],
     confirmPassword: [null, [Validators.required]],
+    favSingers: this._fb.array([this._fb.control(null, [Validators.required])]),
   });
+
+  addSinger() {
+    (this.form.controls['favSingers'] as FormArray).push(
+      this._fb.control(null, [Validators.required])
+    );
+  }
+
+  get favSingers(){
+    return this.form.controls['favSingers'] as FormArray;
+  }
 
   get controls() {
     return this.form.controls;
