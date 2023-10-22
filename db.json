@@ -1,4 +1,11 @@
 {
+  "profile": [
+    {
+      "id": "1",
+      "userId": 1,
+      "content": "This is content for User 1"
+    }
+  ],
   "users": [
     {
       "email": "abc@def.com",
@@ -22,17 +29,12 @@
         "thumbnail": "https://via.placeholder.com/150"
       },
       "price": 100,
-      "singers": [
-        "Singer A",
-        "Singer B"
-      ],
+      "singers": ["Singer A", "Singer B"],
       "songs": [
         {
           "duration": 430,
           "name": "Awesome Song",
-          "singer": [
-            "Singer A"
-          ]
+          "singer": ["Singer A"]
         }
       ],
       "isPurchasedByUser": true,
@@ -44,17 +46,12 @@
         "thumbnail": "https://via.placeholder.com/150"
       },
       "price": 200,
-      "singers": [
-        "Singer C",
-        "Singer D"
-      ],
+      "singers": ["Singer C", "Singer D"],
       "songs": [
         {
           "duration": 600,
           "name": "Great Song",
-          "singer": [
-            "Singer C"
-          ]
+          "singer": ["Singer C"]
         }
       ],
       "newRelesedDate": "2023-10-08T16: 13: 46.338Z",
@@ -66,17 +63,12 @@
         "thumbnail": "https://via.placeholder.com/150"
       },
       "price": 200000,
-      "singers": [
-        "Singer D",
-        "Singer E"
-      ],
+      "singers": ["Singer D", "Singer E"],
       "songs": [
         {
           "duration": 549,
           "name": "Great Song",
-          "singer": [
-            "Singer C"
-          ]
+          "singer": ["Singer C"]
         }
       ],
       "id": 3
@@ -94,92 +86,55 @@
     {
       "name": "",
       "price": 0,
-      "singers": [
-        "",
-        ""
-      ],
+      "singers": ["", ""],
       "id": 6
     },
     {
       "name": "",
       "price": 0,
-      "singers": [
-        "",
-        "",
-        ""
-      ],
+      "singers": ["", "", ""],
       "id": 7
     },
     {
       "name": "",
       "price": 0,
-      "singers": [
-        "",
-        "",
-        "",
-        ""
-      ],
+      "singers": ["", "", "", ""],
       "id": 8
     },
     {
       "name": "",
       "price": 0,
-      "singers": [
-        "1",
-        ""
-      ],
+      "singers": ["1", ""],
       "id": 9
     },
     {
       "name": "",
       "price": 0,
-      "singers": [
-        "1",
-        "2",
-        ""
-      ],
+      "singers": ["1", "2", ""],
       "id": 10
     },
     {
       "name": "",
       "price": 0,
-      "singers": [
-        "1",
-        "2",
-        "3",
-        ""
-      ],
+      "singers": ["1", "2", "3", ""],
       "id": 11
     },
     {
       "name": "def",
       "price": 1000,
-      "singers": [
-        "11",
-        "22",
-        "33",
-        "34"
-      ],
+      "singers": ["11", "22", "33", "34"],
       "id": 12
     },
     {
       "name": "",
       "price": 0,
-      "singers": [
-        "1",
-        "2",
-        "21",
-        "212"
-      ],
+      "singers": ["1", "2", "21", "212"],
       "id": 13
     },
     {
       "name": "xyz",
       "price": 1000,
-      "singers": [
-        "abc",
-        "def"
-      ],
+      "singers": ["abc", "def"],
       "id": 14
     }
   ],
@@ -190,17 +145,12 @@
         "thumbnail": "https://via.placeholder.com/150"
       },
       "price": 100,
-      "singers": [
-        "Singer A",
-        "Singer B"
-      ],
+      "singers": ["Singer A", "Singer B"],
       "songs": [
         {
           "duration": 430,
           "name": "Awesome Song",
-          "singer": [
-            "Singer A"
-          ]
+          "singer": ["Singer A"]
         }
       ],
       "isPurchasedByUser": true,
@@ -212,17 +162,12 @@
         "thumbnail": "https://via.placeholder.com/150"
       },
       "price": 200,
-      "singers": [
-        "Singer C",
-        "Singer D"
-      ],
+      "singers": ["Singer C", "Singer D"],
       "songs": [
         {
           "duration": 600,
           "name": "Great Song",
-          "singer": [
-            "Singer C"
-          ]
+          "singer": ["Singer C"]
         }
       ],
       "newRelesedDate": "2023-10-08T16: 13: 46.338Z",
@@ -234,17 +179,12 @@
         "thumbnail": "https://via.placeholder.com/150"
       },
       "price": 200000,
-      "singers": [
-        "Singer D",
-        "Singer E"
-      ],
+      "singers": ["Singer D", "Singer E"],
       "songs": [
         {
           "duration": 549,
           "name": "Great Song",
-          "singer": [
-            "Singer C"
-          ]
+          "singer": ["Singer C"]
         }
       ],
       "id": 3
@@ -257,17 +197,12 @@
         "thumbnail": "https://via.placeholder.com/150"
       },
       "price": 100,
-      "singers": [
-        "Singer A",
-        "Singer B"
-      ],
+      "singers": ["Singer A", "Singer B"],
       "songs": [
         {
           "duration": 430,
           "name": "Awesome Song",
-          "singer": [
-            "Singer A"
-          ]
+          "singer": ["Singer A"]
         }
       ],
       "isPurchasedByUser": true,
@@ -279,17 +214,12 @@
         "thumbnail": "https://via.placeholder.com/150"
       },
       "price": 200,
-      "singers": [
-        "Singer C",
-        "Singer D"
-      ],
+      "singers": ["Singer C", "Singer D"],
       "songs": [
         {
           "duration": 600,
           "name": "Great Song",
-          "singer": [
-            "Singer C"
-          ]
+          "singer": ["Singer C"]
         }
       ],
       "newRelesedDate": "2023-10-08T16: 13: 46.338Z",
@@ -301,17 +231,12 @@
         "thumbnail": "https://via.placeholder.com/150"
       },
       "price": 200000,
-      "singers": [
-        "Singer D",
-        "Singer E"
-      ],
+      "singers": ["Singer D", "Singer E"],
       "songs": [
         {
           "duration": 549,
           "name": "Great Song",
-          "singer": [
-            "Singer C"
-          ]
+          "singer": ["Singer C"]
         }
       ],
       "id": 3

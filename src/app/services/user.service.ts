@@ -12,11 +12,16 @@ export class UserService {
 
   register(user: IUserRegisterPayload) {
     const { confirmPassword, ...rest } = user;
-    return this._http.post<IUserRegisterResponsePayload>('http://localhost:3000/register', rest).pipe(
+    return this._http.post<IUserRegisterResponsePayload>('http://localhost:3000/register', rest)
+    .pipe(
       tap((response) => {
         this._router.navigate(['/']);
         window.localStorage.setItem("access-token", response.accessToken)
       })
     );
+  }
+
+  getProfile(){
+    return this._http.get("http://localhost:3000/profile/1");
   }
 }

@@ -1,11 +1,11 @@
 import { DEFAULT_CURRENCY_CODE, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http'
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 // Template Driven - FormsModule
 // Reactive Forms - Reactive Module
-import { FormsModule, ReactiveFormsModule } from "@angular/forms"
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +18,8 @@ import { HomeScreenComponent } from './screens/home-screen/home-screen.component
 import { AdminAddAlbumScreenComponent } from './screens/admin-add-album-screen/admin-add-album-screen.component';
 import { RegisterUserScreenComponent } from './screens/register-user-screen/register-user-screen.component';
 import { TextControlComponent } from './components/form/text-control/text-control.component';
+import { ProfileComponent } from './screens/profile/profile.component';
+import { AuthTokenInterceptor } from './services/auth-token.interceptor';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,7 @@ import { TextControlComponent } from './components/form/text-control/text-contro
     AdminAddAlbumScreenComponent,
     RegisterUserScreenComponent,
     TextControlComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,16 +40,23 @@ import { TextControlComponent } from './components/form/text-control/text-contro
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [
     {
-      provide: DEFAULT_CURRENCY_CODE, useValue: "INR"
+      provide: DEFAULT_CURRENCY_CODE,
+      useValue: 'INR',
     },
     {
-      provide: DATE_PIPE_DEFAULT_OPTIONS, useValue: { dateFormat: 'mediumDate' }
-    }
+      provide: DATE_PIPE_DEFAULT_OPTIONS,
+      useValue: { dateFormat: 'mediumDate' },
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthTokenInterceptor,
+      multi: true,
+    },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

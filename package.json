@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "start:server:dev": "json-server db.json --watch --delay=1000 -m ./node_modules/json-server-auth"
+    "start:server:dev": "json-server db.json --watch --delay=1000 -m ./node_modules/json-server-auth  -r routes.json"
   },
   "private": true,
   "dependencies": {

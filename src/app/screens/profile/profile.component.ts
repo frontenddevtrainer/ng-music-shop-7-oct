@@ -1,0 +1,18 @@
+import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/services/user.service';
+
+@Component({
+  selector: 'ms-profile',
+  templateUrl: './profile.component.html',
+  styleUrls: ['./profile.component.scss']
+})
+export class ProfileComponent implements OnInit{
+
+  constructor(private _user: UserService){}
+
+  ngOnInit(): void {
+    this._user.getProfile().subscribe((response)=>{
+      console.log(response);
+    })
+  }
+}
