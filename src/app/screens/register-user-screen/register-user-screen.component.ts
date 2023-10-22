@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PasswordValidator } from 'src/app/validators/password';
 
@@ -7,8 +7,10 @@ import { PasswordValidator } from 'src/app/validators/password';
   templateUrl: './register-user-screen.component.html',
   styleUrls: ['./register-user-screen.component.scss'],
 })
-export class RegisterUserScreenComponent {
+export class RegisterUserScreenComponent implements OnInit {
   constructor(private _fb: FormBuilder) {}
+
+  form!: FormGroup;
 
   // POST /api/register
   /*
@@ -22,26 +24,37 @@ export class RegisterUserScreenComponent {
     }
   */
 
-  form: FormGroup = this._fb.group({
-    email: ['abc@def.com', [Validators.required, Validators.email]],
-    firstname: [null, [Validators.required]],
-    lastname: [null, [Validators.required]],
-    dob: [null, [Validators.required]],
-    password: [
-      null,
-      [Validators.required, Validators.minLength(8), PasswordValidator()],
-    ],
-    confirmPassword: [null, [Validators.required]],
-    favSingers: this._fb.array([this._fb.control(null, [Validators.required])]),
-  });
+  ngOnInit(): void {
+    this.initForm();
+  }
+
+  initForm() {
+    this.form = this._fb.group({
+      email: ['abc@def.com', [Validators.required, Validators.email]],
+      firstname: [null, [Validators.required]],
+      lastname: [null, [Validators.required]],
+      dob: [null, [Validators.required]],
+      password: [
+        null,
+        [Validators.required, Validators.minLength(8), PasswordValidator()],
+      ],
+      confirmPassword: [null, [Validators.required]],
+      favSingers: this._fb.array([]),
+    });
+
+    this.addSinger();
+  }
 
   addSinger() {
     (this.form.controls['favSingers'] as FormArray).push(
-      this._fb.control(null, [Validators.required])
+      this._fb.group({
+        name: [null, [Validators.required]],
+        rating: [null, [Validators.max(5), Validators.min(1)]],
+      })
     );
   }
 
-  get favSingers(){
+  get favSingers() {
     return this.form.controls['favSingers'] as FormArray;
   }
 

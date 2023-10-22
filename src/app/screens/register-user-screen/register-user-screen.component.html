@@ -31,12 +31,11 @@
 
     <div class="mb-4" formArrayName="favSingers">
       <h2>Fav Singers</h2>
+      <div *ngFor="let Singers of favSingers.controls; let i = index" [formGroupName]="i">
+        <ms-text-control formControlName="name" label="Singer #{{ i + 1 }}" />
+        <ms-text-control formControlName="rating" label="Singer #{{ i + 1 }} rating" />
+      </div>
 
-      <ms-text-control
-        *ngFor="let Singers of favSingers.controls; let i = index"
-        label="Singer #{{ i + 1 }}"
-        [formControlName]="i"
-      />
       <button
         type="button"
         class="bg-green-500 text-white px-12 py-4 rounded hover:bg-green-400 w-full"
