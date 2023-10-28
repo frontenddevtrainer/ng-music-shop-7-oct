@@ -10,7 +10,7 @@
             [ngClass]="{ even: (i + 1) % 2 === 0, odd : (i + 1) % 2 !== 0 }"
             *ngFor="let album of albums; let i = index"></ms-album-card> -->
 
-        <ms-album-card [album]="album" *ngFor="let album of albums; let i = index"></ms-album-card>
+        <ms-album-card [data]="album" *ngFor="let album of albums; let i = index"></ms-album-card>
         <!-- ... Add more albums here -->
     </div>
 </section>

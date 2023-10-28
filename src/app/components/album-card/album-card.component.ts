@@ -30,7 +30,7 @@ export class AlbumCardComponent {
 
   }
 
-  @Input() album!: Album
+  @Input('data') album!: Album
 
 
 

@@ -1,13 +1,33 @@
-import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
+import {
+  Directive,
+  ElementRef,
+  HostListener,
+  Input,
+  Renderer2,
+} from '@angular/core';
+
+// .cssclass
+// #id
+// <elementname/>
+// [attribute]
 
 @Directive({
-  selector: '[msHighlight]',
+  selector: '[highlight]',
 })
 export class HighlightDirective {
+  
+  @Input('highlight') color!: string;
+
   constructor(private _el: ElementRef, private _renderer: Renderer2) {}
 
   @HostListener('mouseover') mouseover() {
-    this._renderer.setStyle(this._el.nativeElement, 'background-color', 'yellow');
+    console.log(this.color);
+
+    this._renderer.setStyle(
+      this._el.nativeElement,
+      'background-color',
+      this.color !== '' ? this.color : 'yellow'
+    );
   }
 
   @HostListener('mouseout') mouseout() {
