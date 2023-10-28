@@ -8,5 +8,5 @@ import { Album } from './interfaces/Album';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-
+  data = [1, 2, 3]
 }

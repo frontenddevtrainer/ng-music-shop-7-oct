@@ -20,6 +20,8 @@ import { RegisterUserScreenComponent } from './screens/register-user-screen/regi
 import { TextControlComponent } from './components/form/text-control/text-control.component';
 import { ProfileComponent } from './screens/profile/profile.component';
 import { AuthTokenInterceptor } from './services/auth-token.interceptor';
+import { HighlightDirective } from './directives/highlight.directive';
+import { AlbumDetailScreenComponent } from './screens/album-detail-screen/album-detail-screen.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,8 @@ import { AuthTokenInterceptor } from './services/auth-token.interceptor';
     RegisterUserScreenComponent,
     TextControlComponent,
     ProfileComponent,
+    HighlightDirective,
+    AlbumDetailScreenComponent,
   ],
   imports: [
     BrowserModule,
