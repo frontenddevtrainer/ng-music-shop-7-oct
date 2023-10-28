@@ -22,6 +22,7 @@ import { ProfileComponent } from './screens/profile/profile.component';
 import { AuthTokenInterceptor } from './services/auth-token.interceptor';
 import { HighlightDirective } from './directives/highlight.directive';
 import { AlbumDetailScreenComponent } from './screens/album-detail-screen/album-detail-screen.component';
+import { DurationPipe } from './pipes/duration.pipe';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { AlbumDetailScreenComponent } from './screens/album-detail-screen/album-
     ProfileComponent,
     HighlightDirective,
     AlbumDetailScreenComponent,
+    DurationPipe,
   ],
   imports: [
     BrowserModule,
