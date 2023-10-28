@@ -39,7 +39,7 @@
       ],
       "isPurchasedByUser": true,
       "id": 1,
-      "tags": ["top", "latest"]
+      "tags": "latest"
     },
     {
       "name": "Music 202",
