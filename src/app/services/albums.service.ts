@@ -66,7 +66,7 @@ export class AlbumsService {
   }
 
   addNewAlbum(album: Partial<Album>) {
-    return this._http.post('http://localhost:3000/top-albums', album);
+    return this._http.post('http://localhost:3000/albums', album);
   }
 
   getAlbum(id: number) {
