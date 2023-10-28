@@ -70,6 +70,6 @@ export class AlbumsService {
   }
 
   getAlbum(id: number) {
-    return this._http.get<Album>(`http://localhost:3000/top-albums/${id}`);
+    return this._http.get<Album>(`http://localhost:3000/albums/${id}`);
   }
 }

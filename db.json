@@ -22,7 +22,7 @@
       "id": 1
     }
   ],
-  "top-albums": [
+  "albums": [
     {
       "name": "Music 101",
       "albumArt": {
@@ -38,7 +38,8 @@
         }
       ],
       "isPurchasedByUser": true,
-      "id": 1
+      "id": 1,
+      "tags": ["top", "latest"]
     },
     {
       "name": "Music 202",
@@ -54,8 +55,9 @@
           "singer": ["Singer C"]
         }
       ],
-      "newRelesedDate": "2023-10-08T16: 13: 46.338Z",
-      "id": 2
+      "newRelesedDate": "2023-10-08T16:13:46.338Z",
+      "id": 2,
+      "tags": "top"
     },
     {
       "name": "Music 303",
@@ -71,111 +73,43 @@
           "singer": ["Singer C"]
         }
       ],
-      "id": 3
-    }
-  ],
-  "latest-albums": [
-    {
-      "name": "Music 101",
-      "albumArt": {
-        "thumbnail": "https://via.placeholder.com/150"
-      },
-      "price": 100,
-      "singers": ["Singer A", "Singer B"],
-      "songs": [
-        {
-          "duration": 430,
-          "name": "Awesome Song",
-          "singer": ["Singer A"]
-        }
-      ],
-      "isPurchasedByUser": true,
-      "id": 1
+      "id": 3,
+      "tags": "top"
     },
     {
-      "name": "Music 202",
+      "name": "Music 404",
       "albumArt": {
         "thumbnail": "https://via.placeholder.com/150"
       },
-      "price": 200,
-      "singers": ["Singer C", "Singer D"],
+      "price": 300,
+      "singers": ["Singer F", "Singer G"],
       "songs": [
         {
-          "duration": 600,
-          "name": "Great Song",
-          "singer": ["Singer C"]
+          "duration": 500,
+          "name": "Fantastic Song",
+          "singer": ["Singer F"]
         }
       ],
-      "newRelesedDate": "2023-10-08T16: 13: 46.338Z",
-      "id": 2
+      "newRelesedDate": "2023-11-08T16:13:46.338Z",
+      "id": 4,
+      "tags": "latest"
     },
     {
-      "name": "Music 303",
+      "name": "Music 505",
       "albumArt": {
         "thumbnail": "https://via.placeholder.com/150"
       },
-      "price": 200000,
-      "singers": ["Singer D", "Singer E"],
+      "price": 400,
+      "singers": ["Singer H", "Singer I"],
       "songs": [
         {
-          "duration": 549,
-          "name": "Great Song",
-          "singer": ["Singer C"]
+          "duration": 480,
+          "name": "Amazing Song",
+          "singer": ["Singer H"]
         }
       ],
-      "id": 3
-    }
-  ],
-  "bollywood-albums": [
-    {
-      "name": "Music 101",
-      "albumArt": {
-        "thumbnail": "https://via.placeholder.com/150"
-      },
-      "price": 100,
-      "singers": ["Singer A", "Singer B"],
-      "songs": [
-        {
-          "duration": 430,
-          "name": "Awesome Song",
-          "singer": ["Singer A"]
-        }
-      ],
-      "isPurchasedByUser": true,
-      "id": 1
-    },
-    {
-      "name": "Music 202",
-      "albumArt": {
-        "thumbnail": "https://via.placeholder.com/150"
-      },
-      "price": 200,
-      "singers": ["Singer C", "Singer D"],
-      "songs": [
-        {
-          "duration": 600,
-          "name": "Great Song",
-          "singer": ["Singer C"]
-        }
-      ],
-      "newRelesedDate": "2023-10-08T16: 13: 46.338Z",
-      "id": 2
-    },
-    {
-      "name": "Music 303",
-      "albumArt": {
-        "thumbnail": "https://via.placeholder.com/150"
-      },
-      "price": 200000,
-      "singers": ["Singer D", "Singer E"],
-      "songs": [
-        {
-          "duration": 549,
-          "name": "Great Song",
-          "singer": ["Singer C"]
-        }
-      ],
-      "id": 3
+      "id": 5,
+      "tags": "bollywood"
     }
   ]
 }
