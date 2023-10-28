@@ -23,6 +23,7 @@ import { AuthTokenInterceptor } from './services/auth-token.interceptor';
 import { HighlightDirective } from './directives/highlight.directive';
 import { AlbumDetailScreenComponent } from './screens/album-detail-screen/album-detail-screen.component';
 import { DurationPipe } from './pipes/duration.pipe';
+import { JoinPipe } from './pipes/join.pipe';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { DurationPipe } from './pipes/duration.pipe';
     HighlightDirective,
     AlbumDetailScreenComponent,
     DurationPipe,
+    JoinPipe,
   ],
   imports: [
     BrowserModule,
