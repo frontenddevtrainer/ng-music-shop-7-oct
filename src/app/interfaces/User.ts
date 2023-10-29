@@ -10,7 +10,8 @@ export interface IUserRegisterPayload {
     dob:        string;
     password:   string;
     favSingers: string[];
-    confirmPassword: string
+    confirmPassword: string,
+    id: number
 }
 
 export interface IUserRegisterResponsePayload {

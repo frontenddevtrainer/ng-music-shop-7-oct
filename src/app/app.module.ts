@@ -18,13 +18,13 @@ import { HomeScreenComponent } from './screens/home-screen/home-screen.component
 import { AdminAddAlbumScreenComponent } from './screens/admin-add-album-screen/admin-add-album-screen.component';
 import { TextControlComponent } from './components/form/text-control/text-control.component';
 import { ProfileComponent } from './screens/profile/profile.component';
-import { AuthTokenInterceptor } from './services/auth-token.interceptor';
 import { HighlightDirective } from './directives/highlight.directive';
 import { AlbumDetailScreenComponent } from './screens/album-detail-screen/album-detail-screen.component';
 import { DurationPipe } from './pipes/duration.pipe';
 import { JoinPipe } from './pipes/join.pipe';
 import { RegisterUserScreenComponent } from './screens/register-user-screen/register-user-screen.component';
 import { LoginUserScreenComponent } from './screens/login-user-screen/login-user-screen.component';
+import { AuthTokenInterceptor } from './services/auth-token.interceptor';
 
 @NgModule({
   declarations: [

@@ -16,30 +16,38 @@ export class UserService {
 
   register(user: IUserRegisterPayload) {
     const { confirmPassword, ...rest } = user;
-    return this._http.post<IUserRegisterResponsePayload>(
-      'http://localhost:3000/register',
-      rest
-    ).pipe(tap((response)=>{
-      const { accessToken } = response;
-      window.localStorage.setItem("access-token", accessToken);
-      // this._router.navigate(["/"])
-      this._router.navigateByUrl("/")
-    }))
+    return this._http
+      .post<IUserRegisterResponsePayload>(
+        'http://localhost:3000/register',
+        rest
+      )
+      .pipe(
+        tap((response) => {
+          const { accessToken } = response;
+          window.localStorage.setItem('access-token', accessToken);
+          // this._router.navigate(["/"])
+          this._router.navigateByUrl('/');
+        })
+      );
   }
 
   login(user: IUserLoginPayload) {
-    return this._http.post<IUserRegisterResponsePayload>(
-      'http://localhost:3000/login',
-      user
-    ).pipe(tap((response)=>{
-      const { accessToken } = response;
-      window.localStorage.setItem("access-token", accessToken);
-      // this._router.navigate(["/"])
-      this._router.navigateByUrl("/")
-    }))
+    return this._http
+      .post<IUserRegisterResponsePayload>('http://localhost:3000/login', user)
+      .pipe(
+        tap((response) => {
+          const { accessToken, user } = response;
+          window.localStorage.setItem('access-token', accessToken);
+          window.localStorage.setItem('userid', `${user.id}`);
+          this._router.navigateByUrl('/');
+        })
+      );
   }
 
   getProfile() {
-    return this._http.get('http://localhost:3000/profile/1');
+    const userid = window.localStorage.getItem('userid');
+    if (userid) {
+      this._http.get(`http://localhost:3000/users/${userid}`).subscribe();
+    }
   }
 }
