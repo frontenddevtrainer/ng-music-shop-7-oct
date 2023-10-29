@@ -3,13 +3,13 @@
   "users": [
     {
       "email": "abc@example.com",
-      "password": "$2a$10$YoqA214dTUDwrBX6wrdEfePd.yL82a7bKWKo4ShQaZ4ZB5CZiuqNe",
+      "password": "$2a$10$brExv7Bva6Up9xHsZMPYteAqsFv.GWep/MbkkMSVopd.1lO5peCP2",
       "firstname": "Abc",
       "lastname": "Def",
       "dob": "05/05/1900",
       "favSingers": [
         {
-          "name": "Singer A",
+          "name": "Def",
           "rating": "5"
         }
       ],

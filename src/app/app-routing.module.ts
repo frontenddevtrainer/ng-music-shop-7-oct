@@ -5,6 +5,7 @@ import { AdminAddAlbumScreenComponent } from './screens/admin-add-album-screen/a
 import { RegisterUserScreenComponent } from './screens/register-user-screen/register-user-screen.component';
 import { ProfileComponent } from './screens/profile/profile.component';
 import { AlbumDetailScreenComponent } from './screens/album-detail-screen/album-detail-screen.component';
+import { LoginUserScreenComponent } from './screens/login-user-screen/login-user-screen.component';
 
 const routes: Routes = [
   {
@@ -26,17 +27,16 @@ const routes: Routes = [
   },
   {
     path: 'user/register',
-    component : RegisterUserScreenComponent
+    component: RegisterUserScreenComponent,
   },
   {
-    path: "user/profile",
-    component: ProfileComponent
-  }
-  // Login
-  // {
-  //   path: 'user/register',
-  //   component : RegisterUserScreenComponent
-  // },
+    path: 'user/login',
+    component: LoginUserScreenComponent,
+  },
+  {
+    path: 'user/profile',
+    component: ProfileComponent,
+  },
 ];
 
 @NgModule({

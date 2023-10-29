@@ -24,6 +24,7 @@ import { AlbumDetailScreenComponent } from './screens/album-detail-screen/album-
 import { DurationPipe } from './pipes/duration.pipe';
 import { JoinPipe } from './pipes/join.pipe';
 import { RegisterUserScreenComponent } from './screens/register-user-screen/register-user-screen.component';
+import { LoginUserScreenComponent } from './screens/login-user-screen/login-user-screen.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { RegisterUserScreenComponent } from './screens/register-user-screen/regi
     DurationPipe,
     JoinPipe,
     RegisterUserScreenComponent,
+    LoginUserScreenComponent,
   ],
   imports: [
     BrowserModule,

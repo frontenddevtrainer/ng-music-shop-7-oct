@@ -1,3 +1,8 @@
+export interface IUserLoginPayload {
+    email:      string;
+    password:   string;
+}
+
 export interface IUserRegisterPayload {
     email:      string;
     firstName:  string;

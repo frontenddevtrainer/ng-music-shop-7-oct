@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {
+  IUserLoginPayload,
   IUserRegisterPayload,
   IUserRegisterResponsePayload,
 } from '../interfaces/User';
@@ -18,7 +19,24 @@ export class UserService {
     return this._http.post<IUserRegisterResponsePayload>(
       'http://localhost:3000/register',
       rest
-    );
+    ).pipe(tap((response)=>{
+      const { accessToken } = response;
+      window.localStorage.setItem("access-token", accessToken);
+      // this._router.navigate(["/"])
+      this._router.navigateByUrl("/")
+    }))
+  }
+
+  login(user: IUserLoginPayload) {
+    return this._http.post<IUserRegisterResponsePayload>(
+      'http://localhost:3000/login',
+      user
+    ).pipe(tap((response)=>{
+      const { accessToken } = response;
+      window.localStorage.setItem("access-token", accessToken);
+      // this._router.navigate(["/"])
+      this._router.navigateByUrl("/")
+    }))
   }
 
   getProfile() {
