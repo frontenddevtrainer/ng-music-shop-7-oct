@@ -21,8 +21,6 @@ export class HighlightDirective {
   constructor(private _el: ElementRef, private _renderer: Renderer2) {}
 
   @HostListener('mouseover') mouseover() {
-    console.log(this.color);
-
     this._renderer.setStyle(
       this._el.nativeElement,
       'background-color',

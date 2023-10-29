@@ -16,7 +16,6 @@ import { AlbumListingComponent } from './components/album-listing/album-listing.
 import { DATE_PIPE_DEFAULT_OPTIONS } from '@angular/common';
 import { HomeScreenComponent } from './screens/home-screen/home-screen.component';
 import { AdminAddAlbumScreenComponent } from './screens/admin-add-album-screen/admin-add-album-screen.component';
-import { RegisterUserScreenComponent } from './screens/register-user-screen/register-user-screen.component';
 import { TextControlComponent } from './components/form/text-control/text-control.component';
 import { ProfileComponent } from './screens/profile/profile.component';
 import { AuthTokenInterceptor } from './services/auth-token.interceptor';
@@ -24,6 +23,7 @@ import { HighlightDirective } from './directives/highlight.directive';
 import { AlbumDetailScreenComponent } from './screens/album-detail-screen/album-detail-screen.component';
 import { DurationPipe } from './pipes/duration.pipe';
 import { JoinPipe } from './pipes/join.pipe';
+import { RegisterUserScreenComponent } from './screens/register-user-screen/register-user-screen.component';
 
 @NgModule({
   declarations: [
@@ -34,13 +34,13 @@ import { JoinPipe } from './pipes/join.pipe';
     AlbumListingComponent,
     HomeScreenComponent,
     AdminAddAlbumScreenComponent,
-    RegisterUserScreenComponent,
     TextControlComponent,
     ProfileComponent,
     HighlightDirective,
     AlbumDetailScreenComponent,
     DurationPipe,
     JoinPipe,
+    RegisterUserScreenComponent,
   ],
   imports: [
     BrowserModule,

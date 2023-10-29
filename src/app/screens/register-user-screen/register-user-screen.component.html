@@ -1,6 +1,6 @@
 <div class="bg-gray-800 p-10 w-100 rounded-lg">
   <h1 class="text-3xl font-bold mb-6">Register User</h1>
-  <form [formGroup]="form" (ngSubmit)="registerUser()">
+  <form [formGroup]="registerForm" (ngSubmit)="registerUser()">
     <!-- Email -->
     <div class="mb-4">
       <ms-text-control label="Email" formControlName="email" />
@@ -30,9 +30,15 @@
 
     <div class="mb-4" formArrayName="favSingers">
       <h2>Fav Singers</h2>
-      <div *ngFor="let Singers of favSingers.controls; let i = index" [formGroupName]="i">
+      <div
+        *ngFor="let Singers of favSingers.controls; let i = index"
+        [formGroupName]="i"
+      >
         <ms-text-control formControlName="name" label="Singer #{{ i + 1 }}" />
-        <ms-text-control formControlName="rating" label="Singer #{{ i + 1 }} rating" />
+        <ms-text-control
+          formControlName="rating"
+          label="Singer #{{ i + 1 }} rating"
+        />
       </div>
 
       <button
