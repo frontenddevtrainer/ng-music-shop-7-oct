@@ -25,6 +25,7 @@ import { JoinPipe } from './pipes/join.pipe';
 import { RegisterUserScreenComponent } from './screens/register-user-screen/register-user-screen.component';
 import { LoginUserScreenComponent } from './screens/login-user-screen/login-user-screen.component';
 import { AuthTokenInterceptor } from './services/auth-token.interceptor';
+import { ErrorInterceptor } from './services/error.interceptor';
 
 @NgModule({
   declarations: [
@@ -64,6 +65,11 @@ import { AuthTokenInterceptor } from './services/auth-token.interceptor';
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthTokenInterceptor,
+      multi: true,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ErrorInterceptor,
       multi: true,
     },
   ],

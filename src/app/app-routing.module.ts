@@ -6,6 +6,7 @@ import { RegisterUserScreenComponent } from './screens/register-user-screen/regi
 import { ProfileComponent } from './screens/profile/profile.component';
 import { AlbumDetailScreenComponent } from './screens/album-detail-screen/album-detail-screen.component';
 import { LoginUserScreenComponent } from './screens/login-user-screen/login-user-screen.component';
+import { authGuard } from './services/auth.guard';
 
 const routes: Routes = [
   {
@@ -36,6 +37,7 @@ const routes: Routes = [
   {
     path: 'user/profile',
     component: ProfileComponent,
+    canActivate: [authGuard]
   },
 ];
 
