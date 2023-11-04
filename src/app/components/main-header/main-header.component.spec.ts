@@ -20,4 +20,9 @@ describe('MainHeaderComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it("should show h1 with message as Music Store", ()=>{
+    const heading = fixture.nativeElement.querySelector("h1") as HTMLHeadingElement
+    expect(heading.textContent).toContain("Music Store")
+  })
 });
