@@ -32,8 +32,6 @@ export class AlbumCardComponent {
 
   @Input() album!: Album
 
-
-
   addToCart(item: Album) {
     this._cart.addToCart(item);
   }
