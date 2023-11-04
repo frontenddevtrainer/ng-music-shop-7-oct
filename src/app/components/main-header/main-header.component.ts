@@ -9,6 +9,8 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class MainHeaderComponent {
 
+  isMenuShown = false;
+
   cartItems: Album[] = []
 
   constructor(private _cart: CartService) {

@@ -36,6 +36,7 @@
 
     <!-- Add to Cart Icon -->
     <a
+      data-testid="add-to-cart"
       *ngIf="!album?.isPurchasedByUser && !album?.newRelesedDate"
       (click)="addToCart(album)"
       class="inline-flex items-center text-green-400 hover:text-green-300"
@@ -45,6 +46,7 @@
     </a>
 
     <a
+      data-testid="play-album"
       *ngIf="album?.isPurchasedByUser"
       href="#"
       class="inline-flex items-center text-green-400 hover:text-green-300"

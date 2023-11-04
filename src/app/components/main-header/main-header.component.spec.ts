@@ -21,8 +21,34 @@ describe('MainHeaderComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it("should show h1 with message as Music Store", ()=>{
-    const heading = fixture.nativeElement.querySelector("h1") as HTMLHeadingElement
-    expect(heading.textContent).toContain("Music Store")
-  })
+  it('should show h1 with message as Music Store', () => {
+    const heading = fixture.nativeElement.querySelector(
+      '[data-testid=mainheader-heading]'
+    ) as HTMLHeadingElement;
+    expect(heading.textContent).toContain('Music Store');
+  });
+
+  it('should open and close profile menu', () => {
+    expect(component.isMenuShown).toBeFalse();
+
+    const button = (fixture.nativeElement as HTMLElement).querySelector(
+      '[data-testid=profile-menu]'
+    ) as HTMLButtonElement;
+    button.click();
+
+    expect(component.isMenuShown).toBeTrue();
+
+    fixture.detectChanges();
+
+    const drop = (fixture.nativeElement as HTMLElement).querySelector(
+      '[data-testid=profile-menu-drop]'
+    ) as HTMLDivElement;
+
+    const links = drop.querySelectorAll('a');
+
+    expect(links.length).toBe(3);
+
+    expect(links.item(0).textContent).toContain("Your Profile");
+
+  });
 });

@@ -5,7 +5,7 @@
     routerLinkActive="active-link"
     [routerLinkActiveOptions]="{ exact: true }"
   >
-    <h1 class="text-2xl">Music Store</h1>
+    <h2 data-testid="mainheader-heading" class="text-2xl">Music Store</h2>
   </a>
   <p>
     <a [routerLink]="addAlbumLink" routerLinkActive="active-link">Add Album</a>
@@ -20,12 +20,14 @@
 
     <!-- Profile Dropdown -->
     <div class="relative inline-block text-left">
-      <button type="button" class="inline-flex items-center">
+      <button data-testid="profile-menu" type="button" class="inline-flex items-center" (click)="isMenuShown = !isMenuShown">
         <span class="material-icons"> account_circle </span>
         <span class="ml-2">Profile</span>
-        <span class="material-icons"> arrow_drop_down </span>
+        <span class="material-icons"> {{ isMenuShown ? 'arrow_drop_up' : "arrow_drop_down" }} </span>
       </button>
       <div
+        data-testid="profile-menu-drop"
+        *ngIf="isMenuShown"
         class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5"
       >
         <div
