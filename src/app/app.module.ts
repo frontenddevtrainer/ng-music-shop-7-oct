@@ -26,6 +26,7 @@ import { RegisterUserScreenComponent } from './screens/register-user-screen/regi
 import { LoginUserScreenComponent } from './screens/login-user-screen/login-user-screen.component';
 import { AuthTokenInterceptor } from './services/auth-token.interceptor';
 import { ErrorInterceptor } from './services/error.interceptor';
+import { PermissionDirective } from './directives/permission.directive';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { ErrorInterceptor } from './services/error.interceptor';
     JoinPipe,
     RegisterUserScreenComponent,
     LoginUserScreenComponent,
+    PermissionDirective,
   ],
   imports: [
     BrowserModule,
