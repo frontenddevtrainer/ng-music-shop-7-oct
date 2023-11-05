@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Album } from 'src/app/interfaces/Album';
 import { IUserRegisterResponsePayload } from 'src/app/interfaces/User';
@@ -11,7 +11,10 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./main-header.component.scss'],
 })
 export class MainHeaderComponent implements OnInit {
-  user$!: Observable<IUserRegisterResponsePayload['user']>;
+
+  isMenuShown = signal<boolean>(false);
+
+  user!: any;
 
   cartItems: Album[] = [];
 
@@ -20,8 +23,12 @@ export class MainHeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.user$ = this._user.user$
+    this.user = this._user.user
   }
 
   addAlbumLink = '/admin/add-album';
+
+  toggleMenu(){
+    this.isMenuShown.set(!this.isMenuShown())
+  }
 }

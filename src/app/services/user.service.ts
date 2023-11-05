@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 import {
   IUserLoginPayload,
   IUserRegisterPayload,
@@ -12,9 +12,10 @@ import { Router } from '@angular/router';
   providedIn: 'root',
 })
 export class UserService {
+  user = signal<any>(null);
 
-  private user: BehaviorSubject<any> = new BehaviorSubject(null)
-  user$ = this.user.asObservable();
+  // private user: BehaviorSubject<any> = new BehaviorSubject(null)
+  // user$ = this.user.asObservable();
 
   constructor(private _http: HttpClient, private _router: Router) {}
 
@@ -31,7 +32,6 @@ export class UserService {
           window.localStorage.setItem('access-token', accessToken);
           // this._router.navigate(["/"])
           this._router.navigateByUrl('/');
-          
         })
       );
   }
@@ -44,9 +44,8 @@ export class UserService {
           const { accessToken, user } = response;
           window.localStorage.setItem('access-token', accessToken);
           window.localStorage.setItem('userid', `${user.id}`);
-          this.user.next(user);
+          this.user.set(user);
           this._router.navigateByUrl('/');
-          
         })
       );
   }
@@ -54,9 +53,11 @@ export class UserService {
   getProfile() {
     const userid = window.localStorage.getItem('userid');
     if (userid) {
-      this._http.get(`http://localhost:3000/users/${userid}`).subscribe((response)=>{
-        this.user.next(response);
-      });
+      this._http
+        .get(`http://localhost:3000/users/${userid}`)
+        .subscribe((response) => {
+          this.user.set(response);
+        });
     }
   }
 }

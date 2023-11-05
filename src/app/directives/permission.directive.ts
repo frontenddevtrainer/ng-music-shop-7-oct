@@ -1,4 +1,10 @@
-import { Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core';
+import {
+  Directive,
+  Input,
+  TemplateRef,
+  ViewContainerRef,
+  effect,
+} from '@angular/core';
 import { UserService } from '../services/user.service';
 import { Subscription, map } from 'rxjs';
 
@@ -10,29 +16,26 @@ export class PermissionDirective {
     private _user: UserService,
     private _tref: TemplateRef<any>,
     private _vc: ViewContainerRef
-  ) {}
+  ) {
+    effect(() => {
+      const user = this._user.user();
+
+      if (!user) {
+        this.update(false);
+      } else {
+        const isAllowed = this.getPermissionValue(
+          user.permissions,
+          this.permissionPath
+        );
+        this.update(isAllowed);
+      }
+    });
+  }
 
   private permissionPath!: string;
-  private subscription!: Subscription;
 
   @Input() set permission(permission: string) {
     this.permissionPath = permission;
-    this.subscription = this._user.user$
-      .pipe(
-        map((user: any) => {
-          if (!user) {
-            return false;
-          }
-          const isAllowed = this.getPermissionValue(
-            user.permissions,
-            this.permissionPath
-          );
-          return isAllowed;
-        })
-      )
-      .subscribe((isAllowed) => {
-        this.update(isAllowed);
-      });
   }
 
   private getPermissionValue(user: any, path: string) {

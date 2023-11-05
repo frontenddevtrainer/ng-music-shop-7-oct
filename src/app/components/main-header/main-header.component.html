@@ -20,12 +20,17 @@
 
     <!-- Profile Dropdown -->
     <div class="relative inline-block text-left">
-      <button type="button" class="inline-flex items-center">
+      <button
+        type="button"
+        class="inline-flex items-center"
+        (click)="toggleMenu()"
+      >
         <span class="material-icons"> account_circle </span>
-        <span class="ml-2">{{(user$ | async)?.firstname}}</span>
+        <span class="ml-2">{{user()}}</span>
         <span class="material-icons"> arrow_drop_down </span>
       </button>
       <div
+        *ngIf="isMenuShown()"
         class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5"
       >
         <div

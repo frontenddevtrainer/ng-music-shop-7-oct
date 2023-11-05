@@ -17,7 +17,7 @@
       "id": 1,
       "permissions": {
         "homepage": {
-          "show_top_album": false,
+          "show_top_album": true,
           "demo_property": false
         }
       }

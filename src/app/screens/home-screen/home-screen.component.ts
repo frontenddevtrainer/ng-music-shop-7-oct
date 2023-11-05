@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Signal } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AlbumsService } from 'src/app/services/albums.service';
 import { UserService } from 'src/app/services/user.service';
@@ -10,7 +10,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class HomeScreenComponent {
 
-  user$!: Observable<any>;
+  user!: Signal<any>;
 
   constructor(private _albums: AlbumsService, private _user: UserService) {}
 
@@ -18,7 +18,7 @@ export class HomeScreenComponent {
     this._albums.getTopAlbums();
     this._albums.getBollywoodAlbums();
     this._albums.getLatestAlbums();
-    this.user$ = this._user.user$;
+    this.user = this._user.user;
   }
 
   topAlbumHeading: string = 'Top Albums';
