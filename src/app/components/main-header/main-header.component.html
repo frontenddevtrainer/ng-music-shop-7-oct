@@ -22,7 +22,7 @@
     <div class="relative inline-block text-left">
       <button type="button" class="inline-flex items-center">
         <span class="material-icons"> account_circle </span>
-        <span class="ml-2">Profile</span>
+        <span class="ml-2">{{(user$ | async)?.firstname}}</span>
         <span class="material-icons"> arrow_drop_down </span>
       </button>
       <div

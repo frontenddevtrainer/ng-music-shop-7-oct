@@ -1,3 +1,5 @@
+
+
 export interface IUserLoginPayload {
     email:      string;
     password:   string;
@@ -5,8 +7,8 @@ export interface IUserLoginPayload {
 
 export interface IUserRegisterPayload {
     email:      string;
-    firstName:  string;
-    lastName:   string;
+    firstname:  string;
+    lastname:   string;
     dob:        string;
     password:   string;
     favSingers: string[];

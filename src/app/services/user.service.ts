@@ -5,13 +5,17 @@ import {
   IUserRegisterPayload,
   IUserRegisterResponsePayload,
 } from '../interfaces/User';
-import { tap } from 'rxjs';
+import { BehaviorSubject, tap } from 'rxjs';
 import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
+
+  private user: BehaviorSubject<any> = new BehaviorSubject(null)
+  user$ = this.user.asObservable();
+
   constructor(private _http: HttpClient, private _router: Router) {}
 
   register(user: IUserRegisterPayload) {
@@ -27,6 +31,7 @@ export class UserService {
           window.localStorage.setItem('access-token', accessToken);
           // this._router.navigate(["/"])
           this._router.navigateByUrl('/');
+          
         })
       );
   }
@@ -39,7 +44,9 @@ export class UserService {
           const { accessToken, user } = response;
           window.localStorage.setItem('access-token', accessToken);
           window.localStorage.setItem('userid', `${user.id}`);
+          this.user.next(user);
           this._router.navigateByUrl('/');
+          
         })
       );
   }
@@ -47,7 +54,9 @@ export class UserService {
   getProfile() {
     const userid = window.localStorage.getItem('userid');
     if (userid) {
-      this._http.get(`http://localhost:3000/users/${userid}`).subscribe();
+      this._http.get(`http://localhost:3000/users/${userid}`).subscribe((response)=>{
+        this.user.next(response);
+      });
     }
   }
 }

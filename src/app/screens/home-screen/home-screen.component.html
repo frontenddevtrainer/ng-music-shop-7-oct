@@ -1,10 +1,12 @@
 <ms-main-banner></ms-main-banner>
 
-<ng-container *ngIf="topAlbums$ | async as albums">
-  <ms-album-listing
-    [albums]="albums"
-    [heading]="topAlbumHeading"
-  ></ms-album-listing>
+<ng-container *ngIf="(user$ | async)?.permissions.homepage['show_top_album']">
+  <ng-container *ngIf="topAlbums$ | async as albums">
+    <ms-album-listing
+      [albums]="albums"
+      [heading]="topAlbumHeading"
+    ></ms-album-listing>
+  </ng-container>
 </ng-container>
 
 <ng-container *ngIf="bollywoodAlbums$ | async as albums">

@@ -2,7 +2,7 @@
   "profile": [],
   "users": [
     {
-      "userId" : 1,
+      "userId": 1,
       "email": "abc@example.com",
       "password": "$2a$10$brExv7Bva6Up9xHsZMPYteAqsFv.GWep/MbkkMSVopd.1lO5peCP2",
       "firstname": "Abc",
@@ -14,10 +14,15 @@
           "rating": "5"
         }
       ],
-      "id": 1
+      "id": 1,
+      "permissions": {
+        "homepage": {
+          "show_top_album": true
+        }
+      }
     },
     {
-      "userId" : 2,
+      "userId": 2,
       "email": "def@example.com",
       "password": "$2a$10$brExv7Bva6Up9xHsZMPYteAqsFv.GWep/MbkkMSVopd.1lO5peCP2",
       "firstname": "Def",
@@ -39,52 +44,36 @@
         "thumbnail": "https://via.placeholder.com/150"
       },
       "price": 250,
-      "singers": [
-        "Singer J",
-        "Singer K"
-      ],
+      "singers": ["Singer J", "Singer K"],
       "songs": [
         {
           "duration": 320,
           "name": "Mystical Journey",
-          "singer": [
-            "Singer J"
-          ]
+          "singer": ["Singer J"]
         },
         {
           "duration": 285,
           "name": "Sunrise Serenade",
-          "singer": [
-            "Singer J",
-            "Singer K"
-          ]
+          "singer": ["Singer J", "Singer K"]
         },
         {
           "duration": 300,
           "name": "Moonlight Whisper",
-          "singer": [
-            "Singer K"
-          ]
+          "singer": ["Singer K"]
         },
         {
           "duration": 275,
           "name": "Eternal Harmony",
-          "singer": [
-            "Singer J"
-          ]
+          "singer": ["Singer J"]
         },
         {
           "duration": 350,
           "name": "Rhythmic Tales",
-          "singer": [
-            "Singer K"
-          ]
+          "singer": ["Singer K"]
         }
       ],
       "id": 6,
-      "tags": [
-        "top"
-      ]
+      "tags": ["top"]
     },
     {
       "name": "Music 101",
@@ -92,17 +81,12 @@
         "thumbnail": "https://via.placeholder.com/150"
       },
       "price": 100,
-      "singers": [
-        "Singer A",
-        "Singer B"
-      ],
+      "singers": ["Singer A", "Singer B"],
       "songs": [
         {
           "duration": 430,
           "name": "Awesome Song",
-          "singer": [
-            "Singer A"
-          ]
+          "singer": ["Singer A"]
         }
       ],
       "isPurchasedByUser": true,
@@ -115,17 +99,12 @@
         "thumbnail": "https://via.placeholder.com/150"
       },
       "price": 200,
-      "singers": [
-        "Singer C",
-        "Singer D"
-      ],
+      "singers": ["Singer C", "Singer D"],
       "songs": [
         {
           "duration": 600,
           "name": "Great Song",
-          "singer": [
-            "Singer C"
-          ]
+          "singer": ["Singer C"]
         }
       ],
       "newRelesedDate": "2023-10-08T16:13:46.338Z",
@@ -138,17 +117,12 @@
         "thumbnail": "https://via.placeholder.com/150"
       },
       "price": 200000,
-      "singers": [
-        "Singer D",
-        "Singer E"
-      ],
+      "singers": ["Singer D", "Singer E"],
       "songs": [
         {
           "duration": 549,
           "name": "Great Song",
-          "singer": [
-            "Singer C"
-          ]
+          "singer": ["Singer C"]
         }
       ],
       "id": 3,
@@ -160,17 +134,12 @@
         "thumbnail": "https://via.placeholder.com/150"
       },
       "price": 300,
-      "singers": [
-        "Singer F",
-        "Singer G"
-      ],
+      "singers": ["Singer F", "Singer G"],
       "songs": [
         {
           "duration": 500,
           "name": "Fantastic Song",
-          "singer": [
-            "Singer F"
-          ]
+          "singer": ["Singer F"]
         }
       ],
       "newRelesedDate": "2023-11-08T16:13:46.338Z",
@@ -183,17 +152,12 @@
         "thumbnail": "https://via.placeholder.com/150"
       },
       "price": 400,
-      "singers": [
-        "Singer H",
-        "Singer I"
-      ],
+      "singers": ["Singer H", "Singer I"],
       "songs": [
         {
           "duration": 480,
           "name": "Amazing Song",
-          "singer": [
-            "Singer H"
-          ]
+          "singer": ["Singer H"]
         }
       ],
       "id": 5,
